@@ -21,6 +21,7 @@ mongo -port 27017
 >rs.add("127.0.0.1:27019")
 >rs.conf(); 
 ```
+> NOTE: localhost vs 127.0.0.1
 
 verify:
 
@@ -36,4 +37,4 @@ mongo -port 27019
 
 one is primary and other 2 are secondary
 
-NOTE: localhost vs 127.0.0.1
+
