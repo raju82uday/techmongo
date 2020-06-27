@@ -23,18 +23,34 @@ mongo -port 27017
 ```
 > NOTE: localhost vs 127.0.0.1
 
-verify:
-
 ```
 cd /usr/local/mongodb/bin/
 mongo -port 27018
+>rs.slaveOk(); - to be run on every connection?
 ```
 
 ```
 cd /usr/local/mongodb/bin/
 mongo -port 27019
+>rs.slaveOk(); - to be run on every connection?
 ```
 
-one is primary and other 2 are secondary
+one is primary and other two are secondary
 
 
+on primary:
+
+```
+use twoDB
+db.twoColl.insert({"name":"onetest"});
+db.twoColl.insert({"name":"twotest"});
+db.twoColl.insert({"name":"threetest"});
+db.twoColl.find();
+```
+
+on secondary:
+
+```
+use twoDB
+db.twoColl.find();
+```
